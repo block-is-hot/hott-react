@@ -22,7 +22,7 @@ export default class App extends React.Component {
     .send({ username, password })
     .then(res => this.setState({ token: res.body.token }))
     .then(() => localStorage.setItem('token', JSON.stringify(this.state.token)))
-    // .then(() => window.location.pathname = '/store')
+    .then(() => window.location.pathname = '/')
     .catch(console.error)
   }
 
