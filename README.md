@@ -1,0 +1,2 @@
+# hott-react
+React settings
