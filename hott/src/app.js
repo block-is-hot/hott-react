@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
     return superagent.post('http://localhost:8000/api/v1/user/')
       .send({ username, password, email })
-      .then(() => window.location.pathname = '/welcome/signin')
+      .then(() => window.location.pathname = '/signin')
       .catch(console.error)
   }
 
@@ -45,7 +45,7 @@ export default class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
             <Navbar />
-            <Route path="/welcome/:auth" component={(props) =>
+            <Route path="/:auth" component={(props) =>
                 <Landing {...props} signin={this.signin} signup={this.signup} />} />
           </React.Fragment>
         </BrowserRouter>

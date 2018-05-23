@@ -48,7 +48,7 @@ export default class AuthForm extends React.Component {
           </div>
 
               {this.props.buttonText === 'signup' ?
-                <div>
+                <div class="form-input">
                   <input
                     type="email"
                     name="email"
@@ -69,8 +69,6 @@ export default class AuthForm extends React.Component {
               onChange={this.handleChange}/>
           </div>
           <button type="submit" value="sign-in" class="btn-login">
-          {this.props.buttonText}</button>
-          <button type="submit" value="sign-up" class="btn-login">
           {this.props.buttonText}</button>
         </form>
       </div>
