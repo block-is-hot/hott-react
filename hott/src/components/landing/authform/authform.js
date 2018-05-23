@@ -29,42 +29,51 @@ export default class AuthForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        {this.state.error ?
-          <div>
-            <p>{this.state.error.message}</p>
+      <div className="container">
+        <form onSubmit={this.handleSubmit}>
+          {this.state.error ?
+            <div>
+              <p>{this.state.error.message}</p>
+            </div>
+            :
+            undefined
+          }
+          <div class="form-input">
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.handleChange}/>
           </div>
-          :
-          undefined
-        }
 
-        {this.props.buttonText === 'signup' ?
-          <input
-            type="email"
-            name="email"
-            placeholder="john.smith@aol.com"
-            value={this.state.email}
-            onChange={this.handleChange}/>
-          :
-          undefined
-        }
+              {this.props.buttonText === 'signup' ?
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="scott.schmidt@aol.com"
+                    value={this.state.email}
+                    onChange={this.handleChange}/>
+                </div>
+                :
+                undefined
+              }
 
-        <input
-          type="text"
-          name="username"
-          placeholder="john.smith"
-          value={this.state.username}
-          onChange={this.handleChange}/>
-
-        <input
-          type="password"
-          name="password"
-          placeholder="superseekret1234"
-          value={this.state.password}
-          onChange={this.handleChange}/>
-
-        <button type="submit">{this.props.buttonText}</button>
-      </form>
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="codefellows401"
+              value={this.state.password}
+              onChange={this.handleChange}/>
+          </div>
+          <button type="submit" value="sign-in" class="btn-login">
+          {this.props.buttonText}</button>
+          <button type="submit" value="sign-up" class="btn-login">
+          {this.props.buttonText}</button>
+        </form>
+      </div>
     )
   }
 }

@@ -1,8 +1,12 @@
 import React from 'react'
 import superagent from 'superagent'
-import Navbar from './navbar/navbar'
-import Landing from './landing/landing'
+import Navbar from './components/navbar/navbar'
+import Landing from './components/landing/landing'
 import { BrowserRouter, Route } from 'react-router-dom'
+
+require('./styles/css/index.css')
+require('./styles/scss/main.scss')
+
 
 export default class App extends React.Component {
   constructor(props) {
